@@ -5,6 +5,7 @@
   "main": "test.js",
   "dependencies": {
     "dotenv": "^6.0.0",
+    "dotenv-safe": "^6.0.0",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
     "mongodb": "^3.1.4"
