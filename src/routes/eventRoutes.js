@@ -35,8 +35,7 @@ eventRouter.route('/')
   .get(function(req, res) {
 
     // const url = 'mongodb://127.0.0.1:27017';
-    // @todo Use .env
-    const url = "mongodb+srv://USER:PASS@SUBDOMAIN.mongodb.net/test?retryWrites=true";
+    const url = process.env.MONGODB_URL;
     mongodbClient.connect(url, { useNewUrlParser: true }, function(err, dbConnection){
       const db = dbConnection.db('eventsApp');
       const collection = db.collection('events');
@@ -64,8 +63,7 @@ eventRouter.route('/:id')
     const id = req.params.id;
 
     // const url = 'mongodb://127.0.0.1:27017';
-    // @todo Use .env
-    const url = "mongodb+srv://USER:PASS@SUBDOMAIN.mongodb.net/test?retryWrites=true";
+    const url = process.env.MONGODB_URL;
     mongodbClient.connect(url, { useNewUrlParser: true }, function(err, dbConnection){
       const db = dbConnection.db('eventsApp');
       const collection = db.collection('events');

@@ -34,10 +34,9 @@ const eventsData = [
 
 dbRouter.route('/AddEventData')
   .get(function(req, res) {
-    
+
     // const url = 'mongodb://127.0.0.1:27017';
-    // @todo Use .env
-    const url = "mongodb+srv://USER:PASS@SUBDOMAIN.mongodb.net/test?retryWrites=true";
+    const url = process.env.MONGODB_URL;
     mongodb.connect(url, function(err, dbConnection){
 
       // Reference a different database sharing the same connections for the data transfer
